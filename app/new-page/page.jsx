@@ -1,7 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Page() {
+  useEffect(() => {
+    fetch("http://localhost:3000/api/get-data", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(JSON.parse(result)))
+      .catch(error => console.log("error", error));
+  }, []);
+
   const [formData, setFormData] = useState();
   async function handleChange(event) {
     setFormData(event.target.value);
