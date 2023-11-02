@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Page() {
   useEffect(() => {
-    fetch("http://localhost:3000/api/get-data", requestOptions)
+    fetch("https://api-test-chi-lac.vercel.app/api/get-data")
       .then(response => response.text())
       .then(result => console.log(JSON.parse(result)))
       .catch(error => console.log("error", error));
