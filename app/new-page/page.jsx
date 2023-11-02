@@ -23,7 +23,7 @@ export default function Page() {
       redirect: "follow"
     };
 
-    fetch("http://localhost:3000/api/post-data", requestOptions)
+    fetch("https://api-test-chi-lac.vercel.app/api/post-data", requestOptions)
       .then(response => response.text())
       .then(result => console.log(JSON.parse(result)))
       .catch(error => console.log("error", error));
